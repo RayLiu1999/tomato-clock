@@ -1,0 +1,36 @@
+html{
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  display: flex; /*使物件依序排列*/
+  flex-direction: column; /*使物件垂直排列*/
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+.wrapper {
+  flex-grow: 1;
+}
+
+h1 {
+  font-family: "Concert One", cursive;
+}
+
+#number {
+  font-size: 100px;
+}
+
+.btn span {
+  font-size: 40px;
+  color: #dc4e35;
+}
+.btn span:hover {
+  color: red;
+}
+
+#first, #second, #third {
+  display: none;
+}

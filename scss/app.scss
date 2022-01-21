@@ -1,0 +1,30 @@
+$main: #dc4e35;
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+h1 {
+  font-family: "Concert One", cursive;
+}
+
+#number {
+  font-size: 100px;
+}
+
+.btn {
+  span {
+  font-size: 40px;
+  color: $main;
+  &:hover {
+    color: rgb(255, 0, 0);
+
+  }
+}
+}
+
+#first, #second, #third{
+  display: none;
+}
+
+
