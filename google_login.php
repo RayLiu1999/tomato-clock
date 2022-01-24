@@ -6,7 +6,7 @@ require_once __DIR__ . '/conn.php';
 
 $clientID = CLIENT_ID;
 $clientSecret = CLIENT_SECRET;
-$redirect_uri = REDIRECT_URL;
+$redirect_uri = explode(",", REDIRECT_URL);
 
 // $client->setAuthConfig(__DIR__ . '/client_secret_423030282702-ua9orepd552hhusn515jsv4jvu31g6iq.apps.googleusercontent.com.json');
 // $client->addScope(Google\Service\Drive::DRIVE_METADATA_READONLY);
@@ -15,7 +15,8 @@ $client = new Google\Client();
 $client->setClientId($clientID);
 $client->setClientSecret($clientSecret);
 $client->setIncludeGrantedScopes(true);
-$client->setRedirectUri($redirect_uri);
+$client->setRedirectUri("http://localhost/TomatoClock/google_login.php");
+// $client->setRedirectUri(trim($redirect_uri[1]));
 $client->addScope("email");
 $client->addScope("profile");
 

@@ -14,11 +14,11 @@ try {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $taskAry = [];
         $json = file_get_contents('php://input');
-        $data = json_decode($json);
+        $data = json_decode($json, true);
         
-        if (isset($data->progress)) {
-            $progress = $data->progress;
-            $taskId = $data->task_id;
+        if (isset($data['progress'])) {
+            $progress = $data['progress'];
+            $taskId = $data['task_id'];
             updateProgress($pdo, $taskId, $progress);
             updatePollProgress($pdo, $taskId, $progress);
             getAmount($pdo, $taskId);
@@ -29,12 +29,12 @@ try {
             exit();
         }
 
-        $name = test_input($data->name);
-        $amount = test_input($data->amount);
-        $content = test_input($data->content);
-        $taskId = $data->task_id;
+        $name = test_input($data['name']);
+        $amount = test_input($data['amount']);
+        $content = test_input($data['content']);
+        $taskId = $data['task_id'];
         $subtaskNameAry = [];
-        foreach ($data->subtaskName as $subtaskName) {
+        foreach ($data['subtaskName'] as $subtaskName) {
             array_push($subtaskNameAry, test_input($subtaskName));
         }
 

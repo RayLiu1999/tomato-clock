@@ -329,7 +329,7 @@ $("#deleteTasks").on("click", function () {
       method: "delete",
       url: "/TomatoClock/api/api_delete_task.php",
       data: {
-        task_id: deleteTaskId,
+        task_id: deleteTaskId
       },
     }).then((response) => {
       if (!response.data.success) {

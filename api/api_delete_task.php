@@ -12,11 +12,11 @@ if (!isset($_SESSION['logged_in'])) {
 }
 
 try {
-    if ($_SERVER['REQUEST_METHOD'] == 'DELETE') {
+    if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
         $json = file_get_contents('php://input');
         $data = json_decode($json, true);
 
-        if ($data->$taskId) {
+        if (isset($data['task_id'])) {
             $taskId = $data['task_id'];
             function deleteTask($pdo, $taskId)
             {

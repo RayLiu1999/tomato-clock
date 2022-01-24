@@ -13,12 +13,12 @@ try {
     $userId = $_SESSION['user_id'];
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $json = file_get_contents('php://input');
-        $data = json_decode($json);
-        $tomatoTime = test_input($data->tomatoTime);
-        $shortTime = test_input($data->shortTime);
-        $longTime = test_input($data->longTime);
-        $cycle = test_input($data->cycle);
-        $alarmSound = $data->alarmSound;
+        $data = json_decode($json, true);
+        $tomatoTime = test_input($data['tomatoTime']);
+        $shortTime = test_input($data['shortTime']);
+        $longTime = test_input($data['longTime']);
+        $cycle = test_input($data['cycle']);
+        $alarmSound = $data['alarmSound'];
         
         $sql = "UPDATE settings 
             SET tomato_time = '$tomatoTime', short_break_time = '$shortTime', long_break_time = '$longTime', long_break_cycle = '$cycle', ring = '$alarmSound'
