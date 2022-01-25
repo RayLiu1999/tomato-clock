@@ -385,15 +385,15 @@ function appendTaskCard(id, disabled = "") {
         <form id="taskForm">
           <div class="card-body">
             <input id="taskName" type="text" class="form-control" placeholder="今天有甚麼任務呢?" autocomplete=off>
-            <div class="d-flex justify-content-between mt-4">
-              <div class="d-flex flex-column">
+            <div class="row mt-4">
+              <div class="col col-lg-8">
                 <h6>備註</h6>
-                <textarea class="form-control" id="content" cols="30" rows="4"></textarea>
+                <textarea class="form-control" id="content" cols="20" rows="4"></textarea>
               </div>
-              <div class="d-flex flex-column">
+              <div class="col col-lg-4">
                 <h6>番茄數</h6>
                 <div class="d-flex">
-                  <input id="amount" type="text" class="form-control form-control me-3" style="max-width: 60px;" value="1">
+                  <input id="amount" type="text" class="form-control form-control me-3" value="1">
                   <button id="dropUp" type="button" class="btn btn-light btn-sm me-1">
                     <span class="material-icons" style="font-size:20px; color:black">arrow_drop_up</span>
                   </button>
