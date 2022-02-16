@@ -329,7 +329,7 @@ $("#deleteTasks").on("click", function () {
       method: "delete",
       url: "/TomatoClock/api/api_delete_task.php",
       data: {
-        task_id: deleteTaskId
+        task_id: deleteTaskId,
       },
     }).then((response) => {
       if (!response.data.success) {
@@ -523,14 +523,16 @@ function focusCount() {
       });
     } else {
       if (!runTask) {
+        clearInterval(countInterval);
+        takeBreak();
         progress = 0;
       } else {
         let amount = $(`#amount_${runTask}`).text().split("/")[1];
         $(`#amount_${runTask}`).text(progress + "/" + amount);
+        clearInterval(countInterval);
+        takeBreak();
       }
     }
-    clearInterval(countInterval);
-    takeBreak();
     return;
   }
   min = parseInt(second / 60);
@@ -567,8 +569,8 @@ function stop() {
 }
 
 function takeBreak() {
-  shortTime = $("#shortTime").val();
-  longTime = $("#longTime").val();
+  let shortTime = $("#shortTime").val();
+  let longTime = $("#longTime").val();
   focusStatus = false;
   $("#title").text("休息時間");
   if (!(progress % $("#cycle").val() === 0)) {
@@ -581,8 +583,8 @@ function takeBreak() {
 }
 
 function focus() {
-  focusTime = $("#tomatoTime").val();
-  focusStatus = true;
+  let focusTime = $("#tomatoTime").val();
+  let focusStatus = true;
   $("#title").text("專注時間");
   $("#number").text(`${paddedFormat(focusTime)}:${paddedFormat(0)}`);
   $("#startBtn").removeClass("btn-primary").addClass("btn-danger");
