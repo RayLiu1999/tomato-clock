@@ -3,7 +3,7 @@
 TomatoClock is a productivity app designed for your work and study.
 Stay focused and finish tasks effectively.
 
-[DEMO](https://liu-yucheng.com/TomatoClock)
+See Demo [DEMO](https://liu-yucheng.com/TomatoClock)
 
 ## How to use
 
@@ -12,4 +12,4 @@ Stay focused and finish tasks effectively.
 - Run __composer install__ and __npm install__
 - Use Apache or Other Server to run porject
 
-[Reference Website](https://pomofocus.io)
+Reference Website [Pomodoro](https://pomofocus.io)
