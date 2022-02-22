@@ -7,7 +7,7 @@ Stay focused and finish tasks effectively.
 
 ## How to use
 
-- Clone the repository with *git clone*
+- Clone the repository with _git clone_
 - Copy *.env.example* file to *.env* and edit database credentials there
 - Run *composer install* and *npm install*
 - Use Apache or Other Server to run porject
