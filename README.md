@@ -1,9 +1,8 @@
 # TomatoClock
 
-TomatoClock is a productivity app designed for your work and study.
-Stay focused and finish tasks effectively.
-
-See [Demo](https://liu-yucheng.com/TomatoClock)
+> TomatoClock is a productivity app designed for your work and study.
+> Stay focused and finish tasks effectively.
+> See [Demo](https://liu-yucheng.com/TomatoClock)
 
 ## How to use
 
